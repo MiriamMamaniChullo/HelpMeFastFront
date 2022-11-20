@@ -1,0 +1,97 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#">
+        <img src="../../../assets/images/logo.jpeg" alt="" width="50" height="50" class="d-inline-block align-text-top">
+        <img src="../../../assets/images/titulo.jpeg" alt="" width="250" height="50" class="d-inline-block align-text-top">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/enfermeros/nuevo">Enfermero</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/adultoJoven/insertar">Paciente</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/servicios/nuevo">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/anuncios/nuevo">Anuncios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="intereses/nuevo">Interés</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="comentarios/nuevo">Comentarios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="distrito/nuevo">Distrito</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+
+        </form>
+      </div>
+    </div>
+  </nav>
+
+<div class="container">
+
+  <h2>Registrar Servicio</h2>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Id</mat-label>
+    <input matInput placeholder="Id" [(ngModel)]="servicios.idServicios">
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Nombre de Servicios</mat-label>
+    <input matInput required placeholder="nameServicios" [(ngModel)]="servicios.nameServicios">
+  </mat-form-field>
+
+  <br>
+  <mat-form-field class="example-full-width">
+    <mat-label>Descripción de Servicios</mat-label>
+    <input matInput required placeholder="descServicios" [(ngModel)]="servicios.descServicios">
+  </mat-form-field>
+
+  <br>
+  <mat-form-field appearance="fill">
+      <mat-label>Seleccione Enfermero</mat-label>
+      <mat-select [(value)]="idEnfermeroSeleccionado" required>
+          <mat-option *ngFor="let e of listaEnfermero" [value]="e.idEnfermero">
+            {{e.nameEnfermero}}
+          </mat-option>
+      </mat-select>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field appearance="fill">
+      <mat-label>Seleccione Distrito</mat-label>
+      <mat-select [(value)]="idDistritoSeleccionado" required>
+          <mat-option *ngFor="let d of listaDistrito" [value]="d.idDistrito">
+            {{d.nameDistrito}}
+          </mat-option>
+      </mat-select>
+  </mat-form-field>
+
+  <br>
+
+  <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+  <button mat-raised-button color="warn" routerLink="/servicios">Cancelar</button>
+  <p>{{mensaje}}</p>
+
+</div>
+
+    
