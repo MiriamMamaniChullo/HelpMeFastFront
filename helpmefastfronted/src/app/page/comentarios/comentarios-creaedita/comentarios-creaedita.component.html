@@ -49,7 +49,7 @@
   
     <mat-form-field class="example-full-width">
       <mat-label>Id</mat-label>
-      <input matInput placeholder="idComentario" [(ngModel)]="comentario.idComentarios">
+      <input matInput placeholder="id" [(ngModel)]="comentario.idComentarios">
     </mat-form-field>
   
     <br>
@@ -70,8 +70,8 @@
     <mat-form-field appearance="fill">
       <mat-label>Seleccione Servicio</mat-label>
       <mat-select [(value)]="idServicioSeleccionado" required>
-          <mat-option *ngFor="let se of listaServicios" [value]="se.idServicios">
-              {{se.nameServicios}}
+          <mat-option *ngFor="let s of listaServicios" [value]="s.idServicios">
+              {{s.nameServicios}}
           </mat-option>
       </mat-select>
   </mat-form-field>

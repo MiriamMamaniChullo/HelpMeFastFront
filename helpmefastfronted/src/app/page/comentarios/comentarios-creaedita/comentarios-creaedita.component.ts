@@ -37,9 +37,9 @@ export class ComentariosCreaeditaComponent implements OnInit {
   }
   aceptar():void{
     if(this.comentario.opinion.length > 0 && this.comentario.numCalificacion.length> 0 && this.idServicioSeleccionado>0){
-    let se = new Servicios();
-    se.idServicios=this.idServicioSeleccionado;
-    this.comentario.servicio=se;
+    let s = new Servicios();
+    s.idServicios=this.idServicioSeleccionado;
+    this.comentario.servicio=s;
 
     if(this.edicion)
     {
@@ -65,7 +65,7 @@ export class ComentariosCreaeditaComponent implements OnInit {
 
   init() {
     if (this.edicion) {
-      this.comentarioService.listarId(this.comentario.idComentarios).subscribe(data => {
+      this.comentarioService.listarId(this.id).subscribe(data => {
         this.comentario = data;
         console.log(data);
         this.idServicioSeleccionado=data.servicio.idServicios;
