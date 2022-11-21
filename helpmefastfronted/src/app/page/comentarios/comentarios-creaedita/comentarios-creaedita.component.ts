@@ -12,6 +12,7 @@ import { ServiciosService } from 'src/app/service/servicios.service';
 })
 export class ComentariosCreaeditaComponent implements OnInit {
   comentario: Comentarios = new Comentarios();
+  tituloPAGINA: string ="";
   mensaje: string = "";
   edicion: boolean = false;
   id: number = 0;
@@ -25,12 +26,17 @@ export class ComentariosCreaeditaComponent implements OnInit {
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
       this.edicion = data['id'] != null;
+      if(this.edicion){
+        this.tituloPAGINA="Editar comentario";
+      } else {
+        this.tituloPAGINA="Insertar comentario";
+      }
       this.init();
     });
     this.serviciosService.listar().subscribe(data => { this.listaServicios = data });
   }
   aceptar():void{
-    if(this.comentario.opinion.length > 0 && this.comentario.numCalificacion.length > 0 && this.idServicioSeleccionado>0){
+    if(this.comentario.opinion.length > 0 && this.comentario.numCalificacion.length> 0 && this.idServicioSeleccionado>0){
     let se = new Servicios();
     se.idServicios=this.idServicioSeleccionado;
     this.comentario.servicio=se;

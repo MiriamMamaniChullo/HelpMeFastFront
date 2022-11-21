@@ -49,27 +49,27 @@
   
     <mat-form-field class="example-full-width">
       <mat-label>Id</mat-label>
-      <input matInput placeholder="id" [(ngModel)]="comentario.idComentarios">
+      <input matInput placeholder="idComentario" [(ngModel)]="comentario.idComentarios">
     </mat-form-field>
   
     <br>
   
     <mat-form-field class="example-full-width">
       <mat-label>Opinion</mat-label>
-      <input matInput required placeholder="preServicio" [(ngModel)]="comentario.opinion">
+      <input matInput required placeholder="opinion" [(ngModel)]="comentario.opinion">
   
     </mat-form-field>
   
     <br>
     <mat-form-field class="example-full-width">
       <mat-label>Calificacion</mat-label>
-      <input type="fechaPublicacion" matInput required placeholder="fechaPublicacion" [(ngModel)]="comentario.numCalificacion">
+      <input type="numCalificacion" matInput required placeholder="numCalificacion" [(ngModel)]="comentario.numCalificacion">
     </mat-form-field>
     <br>
   
     <mat-form-field appearance="fill">
       <mat-label>Seleccione Servicio</mat-label>
-      <mat-select [(value)]="id" required>
+      <mat-select [(value)]="idServicioSeleccionado" required>
           <mat-option *ngFor="let se of listaServicios" [value]="se.idServicios">
               {{se.nameServicios}}
           </mat-option>

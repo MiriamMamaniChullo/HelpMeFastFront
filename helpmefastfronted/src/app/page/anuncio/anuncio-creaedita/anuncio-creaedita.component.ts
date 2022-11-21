@@ -29,7 +29,7 @@ export class AnuncioCreaeditaComponent implements OnInit {
     this.servicioService.listar().subscribe(data => { this.listaServicios = data });
   }
   aceptar(): void {
-    if (this.anuncio.precioServicio> 0 && this.anuncio.fechaPublicacion.length > 0 && this.idServicioSeleccionado>0) {
+    if (this.anuncio.precioServicio> 0 && this.idServicioSeleccionado>0) {
       let s = new Servicios();
       s.idServicios = this.idServicioSeleccionado;
       this.anuncio.servicio = s;

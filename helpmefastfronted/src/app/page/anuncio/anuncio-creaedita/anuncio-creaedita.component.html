@@ -65,19 +65,17 @@
   <mat-form-field appearance="fill">
     <mat-label>Fecha Publicacion</mat-label>
     <input matInput [matDatepicker]="picker" [(ngModel)]="anuncio.fechaPublicacion" >
+    <mat-hint>MM/DD/YYYY</mat-hint>
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
   
-
-
-
   <br>
   <mat-form-field appearance="fill">
       <mat-label>Seleccione Servicio</mat-label>
       <mat-select [(value)]="idServicioSeleccionado" required>
           <mat-option *ngFor="let s of listaServicios" [value]="s.idServicios">
-              {{s.descServicios}}
+              {{s.nameServicios}}
           </mat-option>
       </mat-select>
   </mat-form-field>
