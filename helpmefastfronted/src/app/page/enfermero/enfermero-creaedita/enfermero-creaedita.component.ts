@@ -27,8 +27,8 @@ export class EnfermeroCreaeditaComponent implements OnInit {
   }
   aceptar():void
   {
-    if(this.enfermero.nameEnfermero.length > 0 && this.enfermero.dniEnfermero > 0 && this.enfermero.edadEnfermero > 0
-    && this.enfermero.numEnfermero > 0 && this.enfermero.emailEnfermero.length > 0 && this.enfermero.codEnfermero > 0 )
+    if(this.enfermero.nameEnfermero.length > 0 && this.enfermero.dniEnfermero.length > 0 && this.enfermero.edadEnfermero > 0
+    && this.enfermero.numEnfermero > 0 && this.enfermero.emailEnfermero.length > 0 && this.enfermero.codEnfermero.length > 0 )
   {
     if(this.edicion)
     {
