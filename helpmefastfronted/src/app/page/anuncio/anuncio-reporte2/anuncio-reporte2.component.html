@@ -1,0 +1,82 @@
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+  
+        <a class="navbar-brand" href="#">
+          <img src="../../../assets/images/logo.jpeg" alt="" width="50" height="50" class="d-inline-block align-text-top">
+          <img src="../../../assets/images/titulo.jpeg" alt="" width="250" height="50" class="d-inline-block align-text-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/enfermeros/nuevo">Enfermero</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/adultoJoven/insertar">Paciente</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/servicios/nuevo">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/anuncios/nuevo">Anuncios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="intereses/nuevo">Interés</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="comentarios/nuevo">Comentarios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="distrito/nuevo">Distrito</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <app-anuncio-buscar></app-anuncio-buscar>
+  
+          </form>
+        </div>
+      </div>
+    </nav>
+  
+  <h2> Lista de Cantidad de Anuncios por Servicio con precios minimo y maximo</h2>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="servicio">
+      <th mat-header-cell *matHeaderCellDef> Servicio </th>
+      <td mat-cell *matCellDef="let element"> {{element.servicio}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="cantidad_de_anuncio">
+      <th mat-header-cell *matHeaderCellDef> Cantidad de anuncios</th>
+      <td mat-cell *matCellDef="let element"> {{element.cantidad_de_anuncio}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="precio_minimo">
+      <th mat-header-cell *matHeaderCellDef> Precio Minimo</th>
+      <td mat-cell *matCellDef="let element"> {{element.precio_minimo}} </td>
+    </ng-container>
+    <!-- Weight Column -->
+    <ng-container matColumnDef="precio_maximo">
+      <th mat-header-cell *matHeaderCellDef> Precio Maximo</th>
+      <td mat-cell *matCellDef="let element"> {{element.precio_maximo}} </td>
+    </ng-container>
+  
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  
+  

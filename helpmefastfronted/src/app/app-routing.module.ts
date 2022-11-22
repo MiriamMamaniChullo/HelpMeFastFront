@@ -1,3 +1,5 @@
+import { AnuncioReporte2Component } from './page/anuncio/anuncio-reporte2/anuncio-reporte2.component';
+import { AnuncioReporteComponent } from './page/anuncio/anuncio-reporte/anuncio-reporte.component';
 import { DistritoCreaeditaComponent } from './page/distrito/distrito-creaedita/distrito-creaedita.component';
 import { DistritoComponent } from './page/distrito/distrito.component';
 import { ComentariosCreaeditaComponent } from './page/comentarios/comentarios-creaedita/comentarios-creaedita.component';
@@ -22,7 +24,9 @@ const routes: Routes = [
   ]},{
     path:'anuncios',component: AnuncioComponent, children:[
       {path:'nuevo', component: AnuncioCreaeditaComponent},
-      {path:'edicion/:id', component: AnuncioCreaeditaComponent}
+      {path:'edicion/:id', component: AnuncioCreaeditaComponent},
+      {path:'reporte',component:AnuncioReporteComponent},
+      {path:'reporte2',component:AnuncioReporte2Component}
     ]
   },{
   path: 'adultoJoven', component: AdultoJovenComponent, children: [

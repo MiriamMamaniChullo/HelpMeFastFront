@@ -18,7 +18,7 @@ export class AnuncioBuscarComponent implements OnInit {
     let array:Anuncio[]=[];
     this.anuncioService.listar().subscribe(data=>{
       data.forEach((element, index)=>{
-        if(element.servicio.descServicios.includes(e.target.value)){
+        if(element.servicio.nameServicios.includes(e.target.value)){
           array.push(data[index]);
         }
       });

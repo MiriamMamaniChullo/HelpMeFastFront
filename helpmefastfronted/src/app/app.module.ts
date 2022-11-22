@@ -50,6 +50,8 @@ import { ServiciosDialogoComponent } from './page/servicios/servicios-listar/ser
 import { HttpClientModule } from '@angular/common/http';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { AnuncioReporteComponent } from './page/anuncio/anuncio-reporte/anuncio-reporte.component';
+import { AnuncioReporte2Component } from './page/anuncio/anuncio-reporte2/anuncio-reporte2.component';
 
 
 @NgModule({
@@ -89,7 +91,9 @@ import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
     ServiciosListarComponent,
     ServiciosBuscarComponent,
     ServiciosCreaeditaComponent,
-    ServiciosDialogoComponent
+    ServiciosDialogoComponent,
+    AnuncioReporteComponent,
+    AnuncioReporte2Component
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { ResultadoMiriam } from './../model/resultadoMiriam';
 import { Injectable } from '@angular/core';
 import{HttpClient} from '@angular/common/http';
 import { EMPTY, Subject } from 'rxjs';
@@ -21,6 +22,12 @@ export class AnuncioService {
   }
   setLista(listaNueva: Anuncio[]){
     this.listaCambio.next(listaNueva);
+  }
+  reporte(){
+    return this.http.get<Anuncio[]>(`${this.url}/buscarmes`);
+  }
+  reporte2(){
+    return this.http.get<ResultadoMiriam[]>(`${this.url}/cantidadanuncioservicio`);
   }
   getLista(){
     return this.listaCambio.asObservable();
