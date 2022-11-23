@@ -52,6 +52,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { AnuncioReporteComponent } from './page/anuncio/anuncio-reporte/anuncio-reporte.component';
 import { AnuncioReporte2Component } from './page/anuncio/anuncio-reporte2/anuncio-reporte2.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { InicioComponent } from './page/inicio/inicio.component';
 
 
 @NgModule({
@@ -93,7 +95,8 @@ import { AnuncioReporte2Component } from './page/anuncio/anuncio-reporte2/anunci
     ServiciosCreaeditaComponent,
     ServiciosDialogoComponent,
     AnuncioReporteComponent,
-    AnuncioReporte2Component
+    AnuncioReporte2Component,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
@@ -110,7 +113,8 @@ import { AnuncioReporte2Component } from './page/anuncio/anuncio-reporte2/anunci
     MatToolbarModule,
     MatSnackBarModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatMenuModule
 
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'es-ES' },],

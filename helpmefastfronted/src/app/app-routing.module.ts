@@ -1,3 +1,4 @@
+import { InicioComponent } from './page/inicio/inicio.component';
 import { AnuncioReporte2Component } from './page/anuncio/anuncio-reporte2/anuncio-reporte2.component';
 import { AnuncioReporteComponent } from './page/anuncio/anuncio-reporte/anuncio-reporte.component';
 import { DistritoCreaeditaComponent } from './page/distrito/distrito-creaedita/distrito-creaedita.component';
@@ -51,6 +52,10 @@ const routes: Routes = [
       path: 'distrito', component: DistritoComponent, children: [
         { path: 'nuevo', component: DistritoCreaeditaComponent },
         { path: 'edicion/:id', component: DistritoCreaeditaComponent }
+    ]},
+    {
+      path: 'inicio', component: InicioComponent, children: [
+       
     ]}
 ];
 
